@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#170916">
+<title>Farhan ❤️ Muskan — Private App</title>
+<style>
+:root{--bg:#11040f;--card:#2a1028;--pink:#ff4d9d;--pink2:#c83cff;--text:#fff;--muted:#e9bfdc}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 15%,#75124f 0,#2b0828 35%,#0d020c 78%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input,textarea{font:inherit}.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:min(620px,100%);background:rgba(65,18,58,.72);border:1px solid rgba(255,140,205,.35);border-radius:30px;padding:30px 22px;box-shadow:0 25px 80px #0008;backdrop-filter:blur(14px);text-align:center}
+.badge{letter-spacing:6px;color:#ffd0ea;font-size:13px}.title{font-size:42px;line-height:1.05;margin:24px 0 6px}.title span{display:block;color:#ff73b4}.heart{font-size:42px;margin:6px}
+.photos{display:flex;justify-content:center;gap:28px;align-items:center;margin:28px 0}.person img,.avatar{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center;border:4px solid #ff6daf;box-shadow:0 0 35px #ff3f9d66;background:#45133d}.person b{display:block;margin-top:12px;font-size:20px}.midheart{font-size:32px}
+.love{font-size:22px;font-weight:700;margin:25px 0;color:#ffe5f2}.primary{border:0;color:#fff;font-weight:800;border-radius:999px;padding:17px 28px;background:linear-gradient(100deg,#ff318b,#b832ff);box-shadow:0 10px 30px #d42cff55;cursor:pointer;width:min(360px,100%)}button:active{transform:scale(.98)}
+.hidden{display:none!important}.home{width:min(980px,100%);margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:20px}.brand{font-weight:900;font-size:24px}.ghost{background:#ffffff12;color:#fff;border:1px solid #ffffff25;border-radius:12px;padding:10px 14px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}.panel{background:#241021cc;border:1px solid #ff82c52c;border-radius:24px;padding:20px}.panel h2{margin-top:0}.ai-call{min-height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.ai-orb{width:180px;height:180px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#ffb1d8 0,#d9349b 35%,#66134e 70%);box-shadow:0 0 0 10px #ff4d9d22,0 0 80px #ff4d9d66;animation:pulse 2s infinite}.ai-face{font-size:76px}.status{margin:16px 0;color:#ffd6eb}.controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.chat{height:360px;overflow:auto;background:#140711;border-radius:18px;padding:14px;margin-bottom:12px}.msg{max-width:82%;padding:10px 13px;border-radius:15px;margin:8px 0;line-height:1.4}.me{margin-left:auto;background:#8e2771}.ai{background:#392033}.row{display:flex;gap:8px}.row input,.row textarea{flex:1;background:#13060f;color:white;border:1px solid #ffffff25;border-radius:13px;padding:12px;outline:none}.small{color:#dcb3d0;font-size:13px;margin-top:12px}
+@keyframes pulse{50%{transform:scale(1.04);box-shadow:0 0 0 22px #ff4d9d10,0 0 100px #ff4d9d88}}
+@media(max-width:520px){.title{font-size:34px}.photos{gap:10px}.person img,.avatar{width:125px;height:125px}.card{padding:25px 16px}}
+</style>
+</head>
+<body>
+<section id="welcome" class="page">
+  <div class="card">
+    <div class="badge">✦ PRIVATE VIP ✦</div><div style="font-size:28px;margin-top:8px">F <span style="color:#ff73b4">♥</span> M</div>
+    <div class="title">Welcome to<span>Farhan Ki Wife Muskan</span></div>
+    <div class="heart">❤️</div>
+    <div class="photos">
+      <div class="person"><img id="farhanPhoto" src="public/farhan.jpg" alt="Farhan"><b>Farhan</b></div>
+      <div class="midheart">♥</div>
+      <div class="person"><img id="muskanPhoto" src="public/muskan.jpg" alt="Muskan"><b>Muskan</b></div>
+    </div>
+    <div class="love">I Love You Meri Jaan Muskan ❤️</div>
+    <button class="primary" id="enterBtn">Enter Private App 🔐</button>
+    <div class="small">Photos can be replaced in the <b>public</b> folder with your real photos.</div>
+  </div>
+</section>
+
+<section id="app" class="home hidden">
+  <div class="top"><div class="brand">❤️ Farhan & Muskan</div><button class="ghost" id="backBtn">Welcome</button></div>
+  <div class="grid">
+    <div class="panel ai-call">
+      <h2>🤖 AI Video Call</h2>
+      <div class="ai-orb"><div class="ai-face">💗</div></div>
+      <div class="status" id="callStatus">AI ready — tap Start Call</div>
+      <div class="controls">
+        <button class="primary" id="callBtn" style="width:auto">📹 Start AI Call</button>
+        <button class="ghost" id="micBtn">🎙️ Voice</button>
+      </div>
+      <div class="small">The screen provides an animated AI avatar. Voice conversation uses your phone's browser speech features. For real AI replies, add the server API key described in README.</div>
+    </div>
+    <div class="panel">
+      <h2>🔒 Private Call</h2>
+      <p class="small">Sirf registered users ko call karne ki ijazat hogi. Aap apna private user ID aur jis person ko call karna hai uski ID enter karein.</p>
+      <div class="row"><input id="myId" placeholder="Your registered ID"><input id="peerId" placeholder="Partner ID"></div>
+      <div class="controls" style="margin-top:12px">
+        <button class="primary" id="privateCallBtn" style="width:auto">📞 Private Call</button>
+        <button class="ghost" id="hangupBtn">End</button>
+      </div>
+      <div class="small" id="privateStatus">Not connected. Configure Supabase in <code>app-config.js</code>.</div>
+      <video id="remoteVideo" autoplay playsinline style="display:none;width:100%;max-height:260px;border-radius:18px;margin-top:14px;background:#000"></video>
+    </div>
+    <div class="panel">
+      <h2>💬 AI Chat</h2>
+      <div class="chat" id="chat"><div class="msg ai">Assalam-o-alaikum ❤️ Main AI hoon. Mujh se baat karo.</div></div>
+      <div class="row"><input id="chatInput" placeholder="Kuch likhein..."><button class="primary" id="sendBtn" style="width:auto">Send</button></div>
+      <div class="small">AI reply endpoint: <code>/api/chat</code>. If no API key is configured, demo reply is shown.</div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app-config.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+$('enterBtn').onclick=()=>{$('welcome').classList.add('hidden');$('app').classList.remove('hidden')};
+$('backBtn').onclick=()=>{$('app').classList.add('hidden');$('welcome').classList.remove('hidden')};
+
+let listening=false, recognition=null;
+$('callBtn').onclick=async()=>{
+  const btn=$('callBtn');
+  if(btn.dataset.on){btn.dataset.on='';btn.textContent='📹 Start AI Call';$('callStatus').textContent='Call ended';return}
+  btn.dataset.on='1';btn.textContent='☎️ End Call';$('callStatus').textContent='AI call active — speak using Voice';
+  startListening();
+};
+
+function startListening(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){$('callStatus').textContent='Voice recognition is not supported in this browser. Use AI Chat instead.';return}
+  if(recognition) recognition.stop();
+  recognition=new SR(); recognition.lang='en-US'; recognition.interimResults=false; recognition.continuous=false;
+  recognition.onresult=e=>handleAI(e.results[0][0].transcript);
+  recognition.onerror=()=>{$('callStatus').textContent='Mic stopped. Tap Voice and speak again.'};
+  recognition.onend=()=>{listening=false};
+  recognition.start(); listening=true; $('callStatus').textContent='🎙️ Listening...';
+}
+$('micBtn').onclick=()=>startListening();
+
+async function handleAI(text){
+  $('callStatus').textContent='🤖 AI is thinking...';
+  try{
+    const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text})});
+    const data=await r.json(); const reply=data.reply||'Mujhe samajh nahi aaya ❤️';
+    $('callStatus').textContent=reply;
+    if('speechSynthesis' in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(reply);u.lang='en-US';speechSynthesis.speak(u)}
+  }catch(e){$('callStatus').textContent='AI server not configured. Chat box mein baat karein.'}
+}
+
+$('sendBtn').onclick=sendChat;
+$('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat()});
+async function sendChat(){
+  const input=$('chatInput'), text=input.value.trim(); if(!text)return; input.value='';
+  addMsg(text,'me');
+  try{
+    const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text})});
+    const data=await r.json(); addMsg(data.reply||'❤️','ai');
+  }catch(e){addMsg('Demo mode: Vercel environment mein OPENAI_API_KEY set karne ke baad real AI replies chalengi. ❤️','ai')}
+}
+function addMsg(t,c){const d=document.createElement('div');d.className='msg '+c;d.textContent=t;$('chat').appendChild(d);$('chat').scrollTop=$('chat').scrollHeight}
+
+// ---- Private registered-user WebRTC calling ----
+// Media is peer-to-peer. Supabase Realtime is used only for signaling.
+// Registration/authorization is intentionally server-side in production; see README.
+let pc = null, localStream = null, channel = null;
+const rtcConfig = {iceServers: (window.APP_CONFIG?.iceServers?.length ? window.APP_CONFIG.iceServers : [{urls:"stun:stun.l.google.com:19302"}])};
+
+function callStatus(t){ $('privateStatus').textContent=t; }
+
+async function setupPrivateChannel(){
+  if (!window.supabase) return false;
+  const url=window.APP_CONFIG?.supabaseUrl, key=window.APP_CONFIG?.supabaseAnonKey;
+  if(!url || !key){ callStatus("Supabase configuration missing."); return false; }
+  if(!window._supabaseClient) window._supabaseClient = window.supabase.createClient(url,key);
+  const my=$('myId').value.trim();
+  if(!my){ callStatus("Enter your registered ID first."); return false; }
+  if(channel) await window._supabaseClient.removeChannel(channel);
+  channel=window._supabaseClient.channel("private-call:"+my);
+  channel.on("broadcast",{event:"signal"}, async ({payload})=>{
+    if(payload.to!==my) return;
+    if(!pc) await createPeer(false);
+    if(payload.type==="offer"){await pc.setRemoteDescription(payload.data); const ans=await pc.createAnswer(); await pc.setLocalDescription(ans); sendSignal("answer",ans);}
+    else if(payload.type==="answer"){await pc.setRemoteDescription(payload.data);}
+    else if(payload.type==="ice" && payload.data){try{await pc.addIceCandidate(payload.data)}catch{}}
+    else if(payload.type==="hangup"){endCall(false);}
+  }).subscribe();
+  return true;
+}
+async function sendSignal(type,data){
+  if(!channel) return;
+  await channel.send({type:"broadcast",event:"signal",payload:{from:$('myId').value.trim(),to:$('peerId').value.trim(),type,data}});
+}
+async function createPeer(initiator){
+  pc=new RTCPeerConnection(rtcConfig);
+  pc.onicecandidate=e=>{if(e.candidate) sendSignal("ice",e.candidate)};
+  pc.ontrack=e=>{const v=$('remoteVideo');v.srcObject=e.streams[0];v.style.display="block"};
+  if(!localStream) localStream=await navigator.mediaDevices.getUserMedia({video:true,audio:true});
+  localStream.getTracks().forEach(t=>pc.addTrack(t,localStream));
+  if(initiator){const offer=await pc.createOffer();await pc.setLocalDescription(offer);await sendSignal("offer",offer)}
+}
+$('privateCallBtn').onclick=async()=>{
+  const ok=await setupPrivateChannel(); if(!ok)return;
+  const me=$('myId').value.trim(), peer=$('peerId').value.trim();
+  if(!peer){callStatus("Enter the registered partner ID.");return}
+  // The production backend should verify that me and peer are an approved pair.
+  try{
+    await createPeer(true);
+    callStatus("Calling "+peer+"…");
+  }catch(e){callStatus("Camera/microphone permission is required.");}
+};
+$('hangupBtn').onclick=()=>endCall(true);
+function endCall(notify){
+  if(notify) sendSignal("hangup",null);
+  if(pc){pc.close();pc=null}
+  if(localStream){localStream.getTracks().forEach(t=>t.stop());localStream=null}
+  const v=$('remoteVideo');v.srcObject=null;v.style.display="none";
+  callStatus("Call ended.");
+}
+
+</script>
+</body>
+</html>
